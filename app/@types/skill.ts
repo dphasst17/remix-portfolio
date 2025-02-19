@@ -1,0 +1,1 @@
+import React from "react"export interface SkillDataProps{    name:string,    icon:React.ReactNode}

@@ -1,0 +1,1 @@
+export interface HeroSectionProps {    character:string,    class:string,    direction:"up" | "down" | "left" | "right"}
