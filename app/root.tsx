@@ -12,23 +12,24 @@ import Layouts from "./layouts";
 import { ApiProvider } from "~/contexts/api";
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+import * as process from "node:process";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-    apiKey: "AIzaSyBlEXQa48tJ4Kzzk5ZAG9Th2IQTWWuJRVk",
+    apiKey: process.env.F_KEY,
     authDomain: "remix-porfolio.firebaseapp.com",
     projectId: "remix-porfolio",
     storageBucket: "remix-porfolio.firebasestorage.app",
     messagingSenderId: "509926632707",
-    appId: "1:509926632707:web:e618781be41d9fe3b74d36",
+    appId: process.env.APP_ID,
     measurementId: "G-0EETV3S9GQ"
 };
 
 // Initialize Firebase
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 let analytics;
 
 if (typeof window !== 'undefined') {
