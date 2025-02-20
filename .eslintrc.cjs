@@ -10,6 +10,8 @@ module.exports = {
     rules: {
         "@typescript-eslint/no-explicit-any": "off",
         "@typesctip-eslint/no-non-null-asserted-optional-chain": "off",
+        "jsx-a11y/no-static-element-interactions": "off",
+        "jsx-a11y/click-events-have-key-events": "off",
     },
   parserOptions: {
     ecmaVersion: "latest",
