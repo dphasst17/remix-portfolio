@@ -1,9 +1,9 @@
 import {
-  Links,
-  Meta,
-  Outlet,
-  Scripts,
-  ScrollRestoration,
+    Links,
+    Meta,
+    Outlet,
+    Scripts,
+    ScrollRestoration,
 } from "@remix-run/react";
 import type { LinksFunction } from "@remix-run/node";
 import React from "react";
@@ -12,19 +12,18 @@ import Layouts from "./layouts";
 import { ApiProvider } from "~/contexts/api";
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import * as process from "node:process";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-    apiKey: process.env.F_KEY,
+    apiKey: import.meta.env.VITE_F_KEY,
     authDomain: "remix-porfolio.firebaseapp.com",
     projectId: "remix-porfolio",
     storageBucket: "remix-porfolio.firebasestorage.app",
     messagingSenderId: "509926632707",
-    appId: process.env.APP_ID,
+    appId: import.meta.env.VITE_APP_ID,
     measurementId: "G-0EETV3S9GQ"
 };
 
@@ -57,27 +56,27 @@ export const links: LinksFunction = () => [
 ];
 
 export function Layout({ children }: { children: React.ReactNode }) {
-  return (
-    <html lang="en">
-      <head>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <Meta />
-        <Links />
-      </head>
-      <body>
+    return (
+        <html lang="en">
+        <head>
+            <meta charSet="utf-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <Meta />
+            <Links />
+        </head>
+        <body>
         <ApiProvider>
-          <Layouts>
-            {children}
-          </Layouts>
+            <Layouts>
+                {children}
+            </Layouts>
         </ApiProvider>
         <ScrollRestoration />
         <Scripts />
-      </body>
-    </html>
-  );
+        </body>
+        </html>
+    );
 }
 
 export default function App() {
-  return <Outlet />;
+    return <Outlet />;
 }
